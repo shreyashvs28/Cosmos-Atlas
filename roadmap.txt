@@ -1,0 +1,47 @@
+Cosmos Atlas | Project Architecture
+
+This structure follows a feature-based modular approach, separating the "Layers" of the universe into logical code blocks.
+
+cosmos-atlas/
+├── public/
+│   ├── images/
+│   │   ├── planets/          # High-res realistic textures (Details Layer)
+│   │   ├── surfaces/         # Mars/Moon rover photos
+│   │   └── satellites/       # Human exploration imagery
+│   └── textures/             # Noise, grain, and starfield patterns
+├── src/
+│   ├── assets/
+│   │   ├── svg/              # Abstract icons, orbital paths, UI markers
+│   │   └── branding/         # Logos and typography assets
+│   ├── components/           # Shared UI Atoms
+│   │   ├── common/           # Buttons, Loaders, Modals
+│   │   ├── layout/           # Main Shell, Layer Transition logic
+│   │   └── navigation/       # The "Scale Indicator" (Earth -> Universe)
+│   ├── features/             # The "Layers" of the Project
+│   │   ├── orientation/      # Landing page, "You are here" visuals
+│   │   ├── system-map/       # SVG-based Solar System Overview (Abstract)
+│   │   │   ├── components/   # Orbit lines, Planet dots
+│   │   │   └── hooks/        # Zoom/Pan logic for the map
+│   │   ├── details/          # Realistic Detail Pages (Realism)
+│   │   │   ├── PlanetHero/   # Immersive image-driven header
+│   │   │   ├── DataStrip/    # Fact-based stats
+│   │   │   └── SurfaceView/  # Deep dive into reality
+│   │   └── exploration/      # Missions, Satellites, Timeline
+│   ├── hooks/                # Global hooks (useScrollProgress, useUniverseScale)
+│   ├── context/              # UniverseState (Current location, Zoom level)
+│   ├── lib/                  # Library configs (Framer Motion, Three.js, Lucide)
+│   ├── styles/               # Tailwind config, Global CSS (glassmorphism)
+│   ├── types/                # TypeScript interfaces for celestial data
+│   ├── App.tsx               # Main routing and layer orchestration
+│   └── main.tsx
+├── tailwind.config.ts
+└── tsconfig.json
+
+
+Key Technical Decisions for this Structure:
+
+Feature-Based Folders: system-map and details are separated because their rendering logic is fundamentally different (SVG math vs. Image/Texture handling).
+
+The Context Layer: A central UniverseState will track the user's "relative position," allowing the UI to change from abstract to realistic as the user zooms in.
+
+Public vs. Assets: Large planet images and satellite photos live in public/ to be served as static assets, while UI SVGs live in src/assets/ to be processed by the build tool for speed and styling.

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --space-deep: #07090f;
+  --starlight: #e6e8ee;
+  --starlight-muted: #a1a6b3;
+  --starlight-faint: #6b7280;
+  --cosmic-blue: #7aa2ff;
+  --cosmic-amber: #f5c07a;
+}
+
+body {
+  background-color: var(--space-deep);
+  color: var(--starlight);
+  font-family: 'Inter', sans-serif;
+}
+
+.font-display { font-family: 'Space Grotesk', sans-serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+  transform-origin: center;
+}

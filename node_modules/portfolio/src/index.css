@@ -1,0 +1,14 @@
+/* src/index.css */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  html {
+    background-color: #ffff; /* Black fallback background */
+  }
+  body {
+    background-color: #ffff; /* Makes body see-through to the html */
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "my_portfolio_root",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace frontend",
+    "build": "npm run build --workspace frontend",
+    "lint": "npm run lint --workspace frontend"
+  },
+  "dependencies": {
+    "lucide-react": "^0.562.0",
+    "motion": "^12.23.25",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-icons": "^5.5.0"
+  },
+  "devDependencies": {
+    "baseline-browser-mapping": "^2.9.5"
+  }
+}
